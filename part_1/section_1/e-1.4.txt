@@ -1,0 +1,26 @@
+Terminal 1:
+
+docker run -d ubuntu
+docker ps
+
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+483b8167df5f   ubuntu    "/bin/bash"   7 seconds ago   Up 6 seconds             optimistic_bose
+
+docker exec 48 apt-get update
+
+docker exec 48 apt-get -y install curl
+
+Terminal 2:
+
+docker attach 48
+sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+Input website:
+helsinki.fi
+Searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.22.1</center>
+</body>
+</html>

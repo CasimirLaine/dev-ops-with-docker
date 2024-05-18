@@ -1,0 +1,11 @@
+Terminal 1:
+
+docker run devopsdockeruh/simple-web-service:ubuntu
+
+Start another terminal (Terminal 2):
+
+docker ps
+67c9981ede18   ubuntu                                     "/bin/bash"             13 hours ago     Up 13 hours              magical_galileo
+
+docker exec cfd tail -f ./text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
