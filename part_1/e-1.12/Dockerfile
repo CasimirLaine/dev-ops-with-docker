@@ -9,3 +9,5 @@ RUN npm install
 RUN npm run build
 RUN npm install -g serve
 CMD serve -s -l 5000 build
+# docker build . -t node-server
+# docker run -p 5001:5000 node-server
