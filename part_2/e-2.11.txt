@@ -1,0 +1,5 @@
+https://github.com/CasimirLaine/firebase-tools
+
+For this project, I implemented docker-compose builds with periodic backups of the Firebase emulators to a mounted volume.
+This way once the container is restarted, the data is retained.
+The suite can be then used in development as file storage (Cloud Storage) or NoSQL database (Firestore).
