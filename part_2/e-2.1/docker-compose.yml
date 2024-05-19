@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+
+  yt-dlp-ubuntu:
+    image: devopsdockeruh/simple-web-service:ubuntu
+    volumes:
+      - ./logs/text.log:/usr/src/app/text.log
+    container_name: yt-dlp
