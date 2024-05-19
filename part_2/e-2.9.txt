@@ -1,0 +1,22 @@
+ENV REACT_APP_BACKEND_URL=http://localhost:80/api
+ENV REQUEST_ORIGIN=http://localhost:5000
+events { worker_connections 1024; }
+
+http {
+  server {
+    listen 80;
+
+    location / {
+      proxy_pass http://frontend:5000;
+    }
+
+    # configure here where requests to http://localhost/api/...
+    # are forwarded
+    location /api/ {
+      proxy_set_header Host $host;
+      proxy_pass http://backend:8080/;
+    }
+  }
+}
+
+With proxy_pass http://backend:8080/; we are telling Nginx to forward all requests to /api/ to the backend service.
