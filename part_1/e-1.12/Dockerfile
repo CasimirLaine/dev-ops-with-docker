@@ -1,6 +1,7 @@
 FROM --platform=linux/amd64 node:16
 EXPOSE 5000
 WORKDIR /usr/src/app
+ENV REACT_APP_BACKEND_URL=http://localhost:8080
 ADD https://github.com/docker-hy/material-applications.git ./
 WORKDIR /usr/src/app/example-frontend
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
