@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Login to Docker Hub
-        uses: docker/login-action@v4
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -20,5 +20,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           file: ./part_3/e-3.1/express-app/Dockerfile
+          context: "{{defaultContext}}:part_3/e-3.1/express-app"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/express-app:latest
