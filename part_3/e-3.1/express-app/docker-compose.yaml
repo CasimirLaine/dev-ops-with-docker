@@ -12,3 +12,5 @@ services:
     container_name: express-app
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+
+# https://hub.docker.com/repository/docker/casimirlaine/express-app/general
