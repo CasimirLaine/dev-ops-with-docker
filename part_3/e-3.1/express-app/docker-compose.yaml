@@ -1,0 +1,14 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=60
+      - WATCHTOWER_LABEL_ENABLE=false
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
+  express-app:
+    image: casimirlaine/express-app:latest
+    container_name: express-app
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
