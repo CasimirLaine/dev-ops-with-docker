@@ -1,0 +1,18 @@
+services:
+  cloner:
+    image: casimirlaine/express-app:latest
+    build:
+        context: .
+        dockerfile: Dockerfile
+        args:
+          - GIT_REPO=mluukkai/express_app
+    environment:
+      - DOCKERHUB_USERNAME=${DOCKERHUB_USERNAME}
+      - DOCKERHUB_TOKEN=${DOCKERHUB_TOKEN}
+      - DOCKER_REPO=${DOCKERHUB_USERNAME}/express-app:latest
+    container_name: cloner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+# Run the following command to build the image
+#DOCKERHUB_USERNAME=- DOCKERHUB_TOKEN=- docker compose up --build
