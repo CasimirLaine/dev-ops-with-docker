@@ -5,8 +5,6 @@ RUN apk add --no-cache git
 COPY builder.sh .
 RUN chmod +x builder.sh
 
-RUN cat builder.sh
-
 ARG GIT_REPO
 ARG DOCKER_REPO
 ENV GIT_REPO=${GIT_REPO}
