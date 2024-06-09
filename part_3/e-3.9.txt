@@ -1,0 +1,3 @@
+https://github.com/CasimirLaine/firebase-tools/blob/master/Dockerfile
+620.48 MB before
+483.73 MB after
